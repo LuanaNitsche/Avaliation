@@ -1,9 +1,9 @@
 ## MyFood Avaliação - Projeto Flask
 
-![MyFood Avaliação](https://github.com/NomeUsuario/NomeRepositorio/blob/main/img/MyFood.png)
+![MyFood Avaliação](https://github.com/LuanaNitsche/Avaliation/flavorxp.png)
 
 ### Visão Geral
-
+ 
 O MyFood Avaliação é um projeto desenvolvido em Flask durante a nossa Amostra de talentos do programa Entra21. Esse projeto tem como objetivo principal armazenar feedbacks relacionados ao MyFood.
 
 ### Principais Funcionalidades
