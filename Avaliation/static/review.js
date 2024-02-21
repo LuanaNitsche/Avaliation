@@ -16,4 +16,20 @@ document.querySelectorAll('.stars').forEach(starGroup => {
             star.classList.add('checked');
         });
     });
+
+    stars.forEach(star => {
+        star.addEventListener('touchstart', () => {
+            const rating = parseInt(star.getAttribute('data-star'));
+
+            const ratingInput = starGroup.querySelector('input[type="hidden"]');
+            ratingInput.value = rating;
+            
+            // Remove 'checked' class from stars in the current group
+            starGroup.querySelectorAll('.fas').forEach(s => s.classList.remove('checked'));
+            
+            // Add 'checked' class to the selected star
+            star.classList.add('checked');
+        });
+    });
 });
+    
