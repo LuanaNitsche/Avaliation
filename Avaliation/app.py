@@ -10,11 +10,13 @@ def init_db():
     c.execute('''CREATE TABLE IF NOT EXISTS reviews
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
                  name TEXT,
+                 telefone INTEGER,
                  comments TEXT,
                  rating INTEGER,
                  ratingFrontEnd INTEGER, 
                  ratingBackEnd INTEGER,
-                 ratingStand INTEGER)''')
+                 ratingStand INTEGER,
+                 ratingProjeto INTEGER)''')
     conn.commit()
     conn.close()
 
@@ -27,6 +29,7 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     name = request.form['name']
+    telefone = request.form['telefone']
     comments = request.form['comments']
     ratingFrontEnd = request.form['ratingFrontEnd']
     ratingBackEnd = request.form['ratingBackEnd']
@@ -35,7 +38,7 @@ def submit():
     
     conn = sqlite3.connect('reviews.db')
     c = conn.cursor()
-    c.execute('INSERT INTO reviews (name, comments, ratingFrontEnd, ratingBackEnd, ratingStand, ratingProjeto) VALUES (?, ?, ?, ?, ?, ?)', (name, comments, ratingFrontEnd, ratingBackEnd, ratingStand, ratingProjeto))
+    c.execute('INSERT INTO reviews (name, telefone, comments, ratingFrontEnd, ratingBackEnd, ratingStand, ratingProjeto) VALUES (?, ?, ?, ?, ?, ?, ?)', (name, telefone, comments, ratingFrontEnd, ratingBackEnd, ratingStand, ratingProjeto))
     conn.commit()
     conn.close()
 
